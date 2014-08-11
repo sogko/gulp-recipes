@@ -1,10 +1,10 @@
 # expressjs + browser-sync + nodemon
 
-A gulp recipe using browser-sync and nodemon to run an ExpressJS server app with live-reloading.
+A gulp recipe using vanilla [```browser-sync```](https://github.com/shakyShane/browser-sync) and [```gulp-nodemon```](https://github.com/JacksonGariety/gulp-nodemon) to run an ExpressJS server app with live-reloading.
 
-browser-sync will watch and live-reload files that does not require a server restart.
+```browser-sync``` will watch and live-reload files that does not require a server restart.
 
-nodemon will watch files that requires a server restart on change.
+```gulp-nodemon``` will watch files that requires a server restart on change.
 
 ## Quick start
 
