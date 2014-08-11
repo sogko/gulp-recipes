@@ -1,6 +1,11 @@
 # gulp-recipes
 
-Collection of gulp recipes
+Not your typical collection of [gulp](http://gulpjs.com) recipes.
+
+Rather than having a big 'ol ```gulpfile.js``` with a ton of ```gulp.tasks()```, each recipe is a standalone folder that comes along with real examples that you can ```gulp``` to see it in action, along with comprehensive ```README.md```.
+
+Simply ```cd``` to a recipe folder, ```gulp``` and slurp away.
+
 
 ## Quick Start
 
@@ -17,7 +22,6 @@ git clone https://github.com/sogko/gulp-recipes
 cd gulp-recipes
 
 npm  install
-
 ```
 
 ### Running a recipe example
