@@ -12,11 +12,11 @@ A gulp recipe using vanilla [```browser-sync```](https://github.com/shakyShane/b
 gulp
 ```
 
-To see browser-sync + nodemon live-reload working together:
+To see ```browser-sync``` + ```nodemon``` working together:
 
-* Edit ```public/style.css``` to see browser-sync injecting changed css into page without reloading page
-* Edit ```public/index.html``` to see browser-sync reloading browser upon change
-* Edit ```app.js``` to see nodemon restarting server and browser-sync reloading page upon page
+* Edit ```public/style.css``` to see ```browser-sync``` injecting changed css into page without reloading page
+* Edit ```public/index.html``` to see ```browser-sync``` reloading browser upon change
+* Edit ```app.js``` to see ```nodemon``` restarting server and ```browser-sync``` reloading page upon page
 
 ## Notes
 
