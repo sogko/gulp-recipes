@@ -1,6 +1,6 @@
 # gulp-recipes
 
-[!gulpjs.com](https://raw2.github.com/gulpjs/artwork/master/gulp-2x.png)
+![gulpjs.com](https://raw2.github.com/gulpjs/artwork/master/gulp.png)
 
 Not your typical collection of [gulp](http://gulpjs.com) recipes.
 
