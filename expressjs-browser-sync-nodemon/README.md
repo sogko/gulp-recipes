@@ -10,7 +10,6 @@ A gulp recipe using vanilla [```browser-sync```](https://github.com/shakyShane/b
 
 ```
 gulp
-
 ```
 
 To see browser-sync + nodemon live-reload working together:
