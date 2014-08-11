@@ -2,15 +2,15 @@
 
 Collection of gulp recipes
 
-# Quick Start
+## Quick Start
 
-## Pre-requisites
+### Pre-requisites
 
 ```bash
 npm install -g gulp
 ```
 
-## Install
+### Install
 
 ```bash
 git clone https://github.com/sogko/gulp-recipes
@@ -20,7 +20,7 @@ npm  install
 
 ```
 
-## Running a recipe example
+### Running a recipe example
 
 For eg: [```expressjs-browser-sync-nodemon```](expressjs-browser-sync-nodemon)
 
