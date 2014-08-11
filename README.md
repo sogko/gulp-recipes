@@ -1,5 +1,7 @@
 # gulp-recipes
 
+[!gulpjs.com](https://raw2.github.com/gulpjs/artwork/master/gulp-2x.png)
+
 Not your typical collection of [gulp](http://gulpjs.com) recipes.
 
 Rather than having a big 'ol ```gulpfile.js``` with a ton of ```gulp.tasks()```, each recipe is a standalone folder that comes along with real examples that you can ```gulp``` to see it in action, along with comprehensive ```README.md```.
