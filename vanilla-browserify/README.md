@@ -3,14 +3,19 @@
 This recipe shows you how to use vanilla [```browserify```](https://github.com/substack/node-browserify) (with some help from [```vinyl-source-stream```](https://github.com/hughsk/vinyl-source-stream))
 and move away from using [```gulp-browserify```](https://github.com/deepak1556/gulp-browserify).
 
-## Example details
-The example [```src/main.js```](src/main.js) script requires both a relative file that has an exported module, and a plain npm module ([```lodash```](https://github.com/lodash/lodash))
 
 ## Running the example
 
 1. Bundle our ```src/main.js``` program by running ```gulp```.
 2. Open ```index.html``` in a browser (Tested on Safari / Chrome).
 3. Profit!
+
+## Example details
+
+1. The example [```src/main.js```](src/main.js) script requires two modules:
+    1. A relative file that has an exported module
+    2. A plain npm-managed node module ([```lodash```](https://github.com/lodash/lodash))
+2. The default ```gulp``` task will bundle ```src/main.js``` into ```dist/bundle.js```, which is loaded into [```index.html```](index.html)
 
 ## Notes
 
