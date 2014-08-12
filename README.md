@@ -49,10 +49,10 @@ cd gulp-recipes
 
 **Running a recipe example**
 
-For eg: [```expressjs-browser-sync-nodemon```](expressjs-browser-sync-nodemon)
+For eg: [```browser-sync-nodemon-expressjs```](browser-sync-nodemon-expressjs)
 
 ```bash
-cd expressjs-browser-sync-nodemon
+cd browser-sync-nodemon-expressjs
 gulp
 ```
 
