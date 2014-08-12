@@ -22,6 +22,15 @@ Simply ```cd``` to a recipe folder, ```gulp``` and slurp away.
 * If an existing library can be vinyled, tapped, plumbered, transformed from/to buffers and/or streams, let there be a recipe for it.
 * A lot of recipe snippets laying around the web; most are working off the bat. Some needs a little bit more pizzazz. And pizzas.
 
+
+## Recipes
+
+* [```expressjs-browser-sync-nodemon```](expressjs-browser-sync-nodemon)
+<br/>How to use ```browser-sync``` + ```gulp-nodemon``` to serve an ExpressJS app for live-reloaded development
+
+* [```vanilla-browserify```](vanilla-browserify)
+<br/>How to use vanilla ```browserify``` (or how to stop worrying about ```gulp-browserify``` and love the bomb)
+
 ## Quick Start
 
 **Pre-requisites**
@@ -46,10 +55,6 @@ For eg: [```expressjs-browser-sync-nodemon```](expressjs-browser-sync-nodemon)
 cd expressjs-browser-sync-nodemon
 gulp
 ```
-## Recipes
-
-* [```expressjs-browser-sync-nodemon```](expressjs-browser-sync-nodemon): How to use ```browser-sync``` + ```gulp-nodemon``` to serve an ExpressJS app for live-reloaded development
-* [```vanilla-browserify```](vanilla-browserify): How to use vanilla ```browserify``` (or how to stop worrying about ```gulp-browserify``` and love the bomb)
 
 ## Other recipe collections / recipes
 
