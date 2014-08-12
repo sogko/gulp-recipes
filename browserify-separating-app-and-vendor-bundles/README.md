@@ -18,7 +18,7 @@ The goal is to organize our application build that helps with reducing build tim
     
 2. Running ```gulp``` will run two tasks asynchronously
     * ```build-vendor```: build a ```public/dist/vendor.js``` bundle containing all vendor file defined in [```bower.json```](bower.json)
-    * ```build-app```: build a ```public/dist/app.js``` bundle containing code from ```public/src/app/app.js```, including its dependencies except for vendor libraries already bundled in ```vendor.js```.
+    * ```build-app```: build a ```public/dist/app.js``` bundle containing code from [```public/src/app/app.js```](public/src/app/app.js) and all its dependencies, **except** for vendor libraries already bundled in ```vendor.js```.
  
 3. Running ```node app.js``` will start the ExpressJS server and serve the application at http://localhost:3000
     * The app loads both ```vendor.js``` and ```app.js``` bundles. 
