@@ -25,7 +25,18 @@ gulp.task('build-vendor', function () {
   // get all bower components ids and use 'bower-resolve' to resolve
   // the ids to their full path, which we need for require()
   getBowerPackageIds().forEach(function (id) {
-    b.require(bowerResolve.fastReadSync(id), { expose: id });
+
+    var resolvedPath = bowerResolve.fastReadSync(id);
+
+    b.require(resolvedPath, {
+
+      // exposes the package id, so that we can require() from our code.
+      // for eg:
+      // require('./vendor/angular/angular.js', {expose: 'angular'}) enables require('angular');
+      // for more information: https://github.com/substack/node-browserify#brequirefile-opts
+      expose: id
+
+    });
   });
 
   var stream = b.bundle().pipe(source('vendor.js'));
