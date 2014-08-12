@@ -1,25 +1,25 @@
 # Vanilla ```browserify```
 
-This recipe shows you how to use vanilla [```browserify```] (with some help from ```vinyl-source-stream```)
-and move away from using ```gulp-browserify```.
+This recipe shows you how to use vanilla [```browserify```](https://github.com/substack/node-browserify) (with some help from [```vinyl-source-stream```](https://github.com/hughsk/vinyl-source-stream))
+and move away from using [```gulp-browserify```](https://github.com/deepak1556/gulp-browserify).
 
+## Example details
+The example [```src/main.js```](src/main.js) script requires both a relative file that has an exported module, and a plain npm module ([```lodash```](https://github.com/lodash/lodash))
 
-## Quick start
+## Running the example
 
-bundle our ```src/main.js``` program
-```bash
-gulp
-```
-
-Open ```index.html``` in a browser (Tested on Safari / Chrome)
+1. Bundle our ```src/main.js``` program by running ```gulp```.
+2. Open ```index.html``` in a browser (Tested on Safari / Chrome).
+3. Profit!
 
 ## Notes
-### 56 reasons not to use ```gulp-browserify``` and counting (or most gulp-* wrappers)
+
+### 56 reasons not to use ```gulp-browserify``` (or most gulp-* wrappers) and counting
 
 The main ```browserify``` library has enough [open issues](https://github.com/substack/node-browserify/issues) at the moment
 that it makes hard to guarantee that ```gulp-browserify``` will always be up-to-date.
 
-In fact, since 13 March 2014, the maintainer of ```gulp-browserify``` has [stopped updating the codebase](https://github.com/deepak1556/gulp-browserify/commits/master)
+In fact, since 13 March 2014, the maintainer of ```gulp-browserify``` has [stopped updating the codebase](https://github.com/deepak1556/gulp-browserify/commits/master).
 
 ### How different are the usage between ```browserify``` and ```gulp-browserify```?
 Not much, really. We only need ```vinyl-source-stream``` to make this all work, which you can still use for your other gulp needs.
