@@ -26,10 +26,13 @@ Simply ```cd``` to a recipe folder, ```gulp``` and slurp away.
 ## Recipes
 
 * [```browser-sync-nodemon-expressjs```](browser-sync-nodemon-expressjs)
-<br/>How to use ```browser-sync``` + ```gulp-nodemon``` to serve an ExpressJS app for live-reloaded development
+<br/>How to use ```browser-sync``` + ```gulp-nodemon``` to serve an ExpressJS app for live-reloaded development.
 
 * [```browserify-vanilla```](browserify-vanilla)
-<br/>How to use vanilla ```browserify``` and stop using ```gulp-browserify```
+<br/>How to use vanilla ```browserify``` and stop using ```gulp-browserify```.
+
+* [```browserify-separating-app-and-vendor-bundles```](browserify-separating-app-and-vendor-bundles)
+<br/>How to use vanilla ```browserify``` (and its friends) to separate codebase into multiple bundles for better build times.
 
 ## Quick Start
 

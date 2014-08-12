@@ -1,0 +1,25 @@
+{
+  "name": "browserify-separating-app-and-vendor-bundles",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sogko/gulp-recipes",
+  "authors": [
+    "Hafiz Ismail <sgk.sprm@gmail.com>"
+  ],
+  "description": "Example to show how to use browserify to bundle separate app and vendor files",
+  "main": "app.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.21",
+    "angular-ui-router": "~0.2.10"
+  }
+}
