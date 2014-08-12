@@ -25,7 +25,7 @@ Simply ```cd``` to a recipe folder, ```gulp``` and slurp away.
 
 ## Recipes
 
-* [```expressjs-browser-sync-nodemon```](expressjs-browser-sync-nodemon)
+* [```browser-sync-nodemon-expressjs```](browser-sync-nodemon-expressjs)
 <br/>How to use ```browser-sync``` + ```gulp-nodemon``` to serve an ExpressJS app for live-reloaded development
 
 * [```browserify-vanilla```](browserify-vanilla)
