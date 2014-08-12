@@ -14,17 +14,17 @@ The goal is to organize our application build that helps with reducing build tim
 ## Example details
 
 1. Running ```bower install``` will download ```angular``` and ```angular-ui-router``` libraries into ```public/src/vendor```.
-    * The libraries will be used by the angular app [```public/src/app/app.js```](public/src/app/app.js) using ```require('angular');``` for eg.
+    * The libraries will be used by the angular app [```public/src/app/app.js```](public/src/app/app.js).
     
 2. Running ```gulp``` will run two tasks asynchronously
-    * ```build-vendor```: build a ```public/dist/vendor.js``` bundle containing all vendor file defined in [```./bower.json```](bower.json)
+    * ```build-vendor```: build a ```public/dist/vendor.js``` bundle containing all vendor file defined in [```bower.json```](bower.json)
     * ```build-app```: build a ```public/dist/app.js``` bundle containing code from ```public/src/app/app.js```, including its dependencies except for vendor libraries already bundled in ```vendor.js```.
  
 3. Running ```node app.js``` will start the ExpressJS server and serve the application at http://localhost:3000
     * The app loads both ```vendor.js``` and ```app.js``` bundles. 
 
-4. The sample Angular app (```MyApp```) is a fairly simple Angular app with enough complexity to showcase different ```require()``` dependencies
-    * Requiring an external libraries managed by bower as defined in bower.json, for example: ```require('angular');```
+4. The sample Angular app (```MyApp```) is a fairly simple standalone app with enough complexity to showcase different ```require()``` dependencies
+    * Requiring an external libraries managed by [```bower```](http://bower.io) as defined in ```bower.json```, for example: ```require('angular');```
     * Requiring a vanilla npm-managed module, for example: ```var _ = require('lodash');```
     * Requiring a relative file that has exported a module, for example: ```require('./controllers');```
     
@@ -38,8 +38,8 @@ This recipe depends on a number of modules to wire this all up together:
 * [```browserify```](https://github.com/substack/node-browserify): yes, the original library
 * [```vinyl-source-stream```](https://github.com/hughsk/vinyl-source-stream): to allow the use of the vanilla browserify (see: [browserify-vanilla](../browserify-vanilla) example)
 * [```bower-resolve```](https://github.com/eugeneware/bower-resolve): to resolve bower package ids to its full path (for eg: from ```'angular'``` to ```'/public/src/vendor/angular/angular.js'```) which we need to bundle the ```vendor.js```
+* [```lodash```](http://github.com/lodash/lodash): for some syntactic sugar working with collections/arrays, just so we can bundle an npm module
 * ```fs```: to read ```bower.json```
-* ```lodash```: for some syntactic sugar working with collections/arrays
 
 
 ### Background: Code organization and build strategies
