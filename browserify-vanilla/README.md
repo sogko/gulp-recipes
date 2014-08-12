@@ -1,4 +1,4 @@
-# Vanilla ```browserify```
+# ```browserify```, vanilla flavored
 
 This recipe shows you how to use vanilla [```browserify```](https://github.com/substack/node-browserify) (with some help from [```vinyl-source-stream```](https://github.com/hughsk/vinyl-source-stream))
 and move away from using [```gulp-browserify```](https://github.com/deepak1556/gulp-browserify).

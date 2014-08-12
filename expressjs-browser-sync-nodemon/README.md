@@ -6,17 +6,19 @@ A gulp recipe using vanilla [```browser-sync```](https://github.com/shakyShane/b
 
 ```gulp-nodemon``` will watch files that requires a server restart on change.
 
-## Quick start
+## Running the example
 
-```
-gulp
-```
+Run ```gulp``` to start
 
-To see ```browser-sync``` + ```nodemon``` working together:
+## Example details
 
-* Edit ```public/style.css``` to see ```browser-sync``` injecting changed css into page without reloading page
-* Edit ```public/index.html``` to see ```browser-sync``` reloading browser upon change
-* Edit ```app.js``` to see ```nodemon``` restarting server and ```browser-sync``` reloading page upon page
+1. Running ```gulp``` will start two server applications:
+    * Our vanilla ExpressJS server at http://localhost:3000
+    * A proxied version of our ExpressJS server at http://localhost:4000 (This is be connected to ```browser-sync```)
+2. To see ```browser-sync``` + ```nodemon``` working together:
+    * Edit ```public/style.css``` to see ```browser-sync``` injecting changed css into page without reloading page
+    * Edit ```public/index.html``` to see ```browser-sync``` reloading browser upon change
+    * Edit ```app.js``` to see ```nodemon``` restarting server and ```browser-sync``` reloading page upon page
 
 ## Notes
 
