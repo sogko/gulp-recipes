@@ -16,8 +16,8 @@ The goal is to organize our application build that helps with reducing build tim
 1. Running ```bower install``` will download ```angular``` and ```angular-ui-router``` libraries into ```public/src/vendor```.
     * The libraries will be used by the angular app [```public/src/app/app.js```](public/src/app/app.js).
     
-2. Running ```gulp``` will run two tasks asynchronously
-    * ```build-vendor```: build a ```public/dist/vendor.js``` bundle containing all vendor file defined in [```bower.json```](bower.json)
+2. Running ```gulp``` will run two tasks asynchronously:
+    * ```build-vendor```: build a ```public/dist/vendor.js``` bundle containing all vendor files defined in [```bower.json```](bower.json)
     * ```build-app```: build a ```public/dist/app.js``` bundle containing code from [```public/src/app/app.js```](public/src/app/app.js) and all its dependencies, **except** for vendor libraries already bundled in ```vendor.js```.
  
 3. Running ```node app.js``` will start the ExpressJS server and serve the application at http://localhost:3000
@@ -37,8 +37,8 @@ This recipe depends on a number of modules to wire this all up together:
 
 * [```browserify```](https://github.com/substack/node-browserify): yes, the original library
 * [```vinyl-source-stream```](https://github.com/hughsk/vinyl-source-stream): to allow the use of the vanilla browserify (see: [browserify-vanilla](../browserify-vanilla) example)
-* [```bower-resolve```](https://github.com/eugeneware/bower-resolve): to resolve bower package ids to its full path (for eg: from ```'angular'``` to ```'/public/src/vendor/angular/angular.js'```) which we need to bundle the ```vendor.js```
-* [```lodash```](http://github.com/lodash/lodash): for some syntactic sugar working with collections/arrays, just so we can bundle an npm module
+* [```bower-resolve```](https://github.com/eugeneware/bower-resolve): to resolve bower package ids to its full path (for eg: from ```'angular'``` to ```'/public/src/vendor/angular/angular.js'```) which we need to bundle into ```vendor.js```
+* [```lodash```](http://github.com/lodash/lodash): just so we can bundle an npm module
 * ```fs```: to read ```bower.json```
 
 
@@ -58,8 +58,6 @@ public/
     '   '- vendor/
     '       '- ...      // bower-managed libraries goes here
     '- index.html       // our angular app root page
-    
-
 ```
 
 
@@ -70,7 +68,7 @@ all of its dependencies.
 
 This would work out fine for a fairly small to medium-sized project. Building the bundle would maybe take a second, 2 seconds, tops.
 
-Once the project gets larger and have more dependencies, that adds to the build time when there is a change to the codebase.
+Once the project gets larger and have more dependencies, that adds to the build time everytime there is a change to the codebase.
 
 Every second it takes to build the bundle affects your sanity as a developer.
 
@@ -80,36 +78,41 @@ Every second it takes to build the bundle affects your sanity as a developer.
 A different strategy would be to separate our client-side codebase into application code and vendor code.
 
 **Application code:**
-* has frequent changes which requires a re-build for every change
-* uses common shared dependencies that are separate from application code
+* has frequent changes which requires a re-build for every change.
+* uses common shared dependencies that are separate from application code.
 
 **Vendor code:**
-* are maintained separately by its vendor
-* no reason to be changed frequently once added as a dependency, except to update to a later version, at which we can re-build
-* is a common library used by multiple applications
-* for eg: jQuery, Angular, reactjs etc
+* are maintained separately by its vendor.
+* no reason to be changed frequently once added as a dependency, except to update it to a later version, at which point we can re-build on-demand.
+* is a common library used by possibly multiple applications.
+* eg: jQuery, Angular, reactjs etc
 
-With the above strategy, with a project's lifetime, we'd be changing and re-building the application code much, much
+With the above strategy, within a project's lifetime, we'd be changing and re-building the application code much, much
 more frequently than we'd need to rebuild the vendor code.
 
-Our build time would be reduced and we keep our sanity within healthy levels.
+Our build time would be reduced since the application codebase is typically smaller than vendor code.
+
+We get to keep our sanity within healthy levels.
+
 
 #### An even more extreme strategy
 
-If we want to go further, in an even larger project, we can separate the codebase into even more bundles:
-* a separate bundle for each application code module that is shared by other application code
+But what happens when the application codebase gets larger, and even just building the application code is taking a second too long?
+
+Thats when you need to re-look into how your codebase are organized and start pulling out shared modules and make them a separate bundle:
+* a separate bundle for each application code module that is shared by other application code.
 * a separate bundle for each vendor code for scenarios where some application module only need one of the vendor libraries
 
-It's basically the same principles, except taken towards the extreme end. This would require implementing a more complex build strategy.
+It's basically the same principles, except taken towards the extreme end. This would require implementing a more fine grain build strategy.
 
 ## Why not use ```watchify```?
-(Feel free to correct me if I'm wrong or if there is a better way in looking at this)
+(Feel free to correct me if I'm wrong or if there is a better way to look at this)
 
 I haven't been using [```watchify```](https://github.com/substack/watchify) as much since it seems to be more suited for optimization use-cases where you want to small incremental builds when creating a single bundle.
 
 We can still use ```watchify``` for the other two strategies (multiple bundles) where we have one ```watchify``` task for each bundle we want to create. 
 
-This more suited for use-cases when even after separating our codebase into bundles, we still want to continue reducing our build times.
+This more suited for use-cases when even after separating our codebase into bundles, we still want to continue reducing our build times further.
 
 For example, if we were to update our recipe and use ```watchify```:
 * one ```watchify``` task for building ```vendor.js``` where it watches changes in ```bower.json``` or the ```public/src/vendor/**/*.js```
