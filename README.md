@@ -48,8 +48,8 @@ gulp
 ```
 ## Recipes
 
-* [```expressjs-browser-sync-nodemon```: How to use ```browser-sync``` + ```gulp-nodemon``` to serve an ExpressJS app for live-reloaded development](expressjs-browser-sync-nodemon)
-* [```vanilla-browserify```: How to use vanilla ```browserify``` (or how to stop worrying about ```gulp-browserify``` and love the bomb)](vanilla-browserify)
+* [```expressjs-browser-sync-nodemon```](expressjs-browser-sync-nodemon): How to use ```browser-sync``` + ```gulp-nodemon``` to serve an ExpressJS app for live-reloaded development
+* [```vanilla-browserify```](vanilla-browserify): How to use vanilla ```browserify``` (or how to stop worrying about ```gulp-browserify``` and love the bomb)
 
 ## Other recipe collections / recipes
 
