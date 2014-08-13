@@ -25,4 +25,4 @@ build/Release
 node_modules
 vanilla-browserify/dist
 browserify-separating-app-and-vendor-bundles/public/src/vendor
-browserify-separating-app-and-vendor-bundles/public/dist
+**/dist

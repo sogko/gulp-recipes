@@ -30,9 +30,14 @@
     "browserify": "^5.9.3",
     "express": "^4.8.3",
     "gulp": "^3.8.7",
+    "gulp-browserify": "^0.5.0",
     "gulp-nodemon": "^1.0.4",
+    "gulp-uglify": "^0.3.1",
     "gulp-util": "^3.0.0",
     "lodash": "^2.4.1",
-    "vinyl-source-stream": "^0.1.1"
+    "vinyl-buffer": "0.0.0",
+    "vinyl-map": "^1.0.1",
+    "vinyl-source-stream": "^0.1.1",
+    "vinyl-transform": "0.0.1"
   }
 }
