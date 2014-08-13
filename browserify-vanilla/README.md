@@ -111,7 +111,7 @@ gulp.task('browserify', function () {
 Easy-peezy, lemon-squeezy.
 
 ### How about the pre- and post-bundle events emitted by ```gulp-browserify```? Those were really useful!
-You can still achieve the same with the orginal ```browserify``` APIs:
+You can still achieve the same with the original ```browserify``` APIs:
 
 ```javascript
 
