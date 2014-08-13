@@ -1,6 +1,6 @@
 # ```browserify```, vanilla flavored
 
-This recipe shows you how to use vanilla [```browserify```](https://github.com/substack/node-browserify) (with some help from [```vinyl-source-stream```](https://github.com/hughsk/vinyl-source-stream))
+This recipe shows you how to use vanilla [```browserify```](https://github.com/substack/node-browserify) (with some help from [```vinyl-transform```](https://github.com/hughsk/vinyl-transform))
 and move away from using [```gulp-browserify```](https://github.com/deepak1556/gulp-browserify).
 
 
@@ -27,7 +27,7 @@ that it makes hard to guarantee that ```gulp-browserify``` will always be up-to-
 In fact, since 13 March 2014, the maintainer of ```gulp-browserify``` has [stopped updating the codebase](https://github.com/deepak1556/gulp-browserify/commits/master).
 
 ### How different are the usage between ```browserify``` and ```gulp-browserify```?
-Not much, really. We only need ```vinyl-source-stream``` to make this all work, which you can still use for your other gulp needs.
+Not much, really. We only need ```vinyl-transform``` to make this all work, which you can still use it for your other gulp needs.
 
 Using ```gulp-browserify```
 ```javascript
@@ -42,20 +42,39 @@ gulp.task('browserify', function() {
 });
 ```
 
-Using ```browserify``` + ```vinyl-source-stream```
+Using ```browserify``` + ```vinyl-transform```
 
 ```javascript
 
 var gulp = require('gulp');
 var browserify = require('browserify');
-var source = require('vinyl-source-stream');
+var transform = require('vinyl-transform');
 
-gulp.task('browserify', function() {
-    var bundleStream = browserify('./src/main.js').bundle();
-    bundleStream
-        .pipe(source('bundle.js'))
-        .pipe(gulp.dest('./dist'));
+gulp.task('browserify', function () {
+
+  var browserified = transform(function(filename) {
+    var b = browserify(filename);
+    return b.bundle();
+  });
+
+  return gulp.src('./src/main.js')  // or you can try './src/*.js' to browserify every file in ./src/* as a separate bundle, it'd still work!
+    .pipe(browserified)
+    .pipe(gulp.dest('./dist'));
 });
 ```
 
 Easy-peezy, lemon-squeezy.
+
+### What kind of voodoo magickery is this ```vinyl-transform```?
+
+A little bit of background: despite all the hype around [```gulpjs```](http://gulpjs.com) about it being a **streaming** build,
+the ```streams``` in a gulp pipeline aren't just pure regular [NodeJS Stream class](nodejs.org/api/stream.html).
+
+Instead, gulp pipes takes in and outputs ```vinyl``` file objects which essentially wraps around regular Stream with some more useful stuff.
+
+So, if we want to pipe a regular Stream, for example, from [browserify.bundle()](https://github.com/substack/node-browserify#bbundlecb), into a gulp pipe, we simply need to convert the regular Stream to a ```vinyl``` file object.
+
+And that's exactly what ```vinyl-transform``` is for; it wraps around a regular Stream and gives you a ```vinyl``` file object
+that you can push into a gulp pipe. Easy-peezy, lemon-squeezy, Dean.
+
+You can apply the same principles to other existing npm modules that supports regular Stream.
