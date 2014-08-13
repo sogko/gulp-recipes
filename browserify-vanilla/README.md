@@ -146,17 +146,19 @@ One great benefit that comes with using the original ```browserify``` is the [ex
 ### What kind of voodoo magickery is this ```vinyl-transform```?
 
 A little bit of background: despite all the hype around [```gulpjs```](http://gulpjs.com) about it being a **streaming** build,
-the ```streams``` in a gulp pipeline aren't just pure regular [NodeJS Stream class](nodejs.org/api/stream.html).
+the ```streams``` in a gulp pipeline aren't just pure regular [NodeJS Stream class](nodejs.org/api/stream.html) which normally operate on Strings and Buffers exclusivly.
 
-Instead, gulp pipes takes in and outputs ```vinyl``` file objects which essentially wraps around regular Stream with some more useful stuff.
+Instead, gulp streams operates in [```object-mode```](http://nodejs.org/api/stream.html#stream_object_mode) which emits [```vinyl```](https://github.com/wearefractal/vinyl) file objects.
 
-So, if we want to pipe a regular Stream, for example, from [browserify.bundle()](https://github.com/substack/node-browserify#bbundlecb), into a gulp pipe, we simply need to convert the regular Stream to a ```vinyl``` file object.
+So, if we want to pipe a regular Stream, for example, from [browserify.bundle()](https://github.com/substack/node-browserify#bbundlecb), into a gulp pipe, we simply need to convert the regular text/buffer Stream to a ```vinyl``` file object
 
-And that's exactly what ```vinyl-transform``` is for; it wraps around a regular Stream and gives you a ```vinyl``` file object
+And that's exactly what ```vinyl-transform``` is for; it wraps around a regular text Stream and gives you a ```vinyl``` file object
 that you can push into a gulp pipe. Easy-peezy, lemon-squeezy, Dean.
 
 You can apply the same principles to other existing npm modules that supports regular Stream to make them compatible with gulp.
 
+### What exactly are ```vinyl``` file objects?
+Currently, there isn't much to the [documentation on ```vinyl```](https://github.com/wearefractal/vinyl) and gulpjs' design decision in using those over regular Stream. Hopefully, as the ecosystem mature, we get better documentation on it (sooner than later).
 
  
 
