@@ -54,8 +54,8 @@ returned by ```b.bundle();```, so that we can use it down the pipeline as a viny
 
 1. There are 3 scripts in ```src``` folder
     1. ```foo.js```: a simple module that returns an array of string
-    2. ```h3.js```: a script that ```require('./foo');``` and append ```<h3>``` for each string from ```foo`` to the browser document
-    3. ```p.js```: a script that ```require('./foo');``` and append ```<p>``` for each string from ```foo`` to the browser document
+    2. ```h3.js```: a script that ```require('./foo');``` and append ```<h3>``` for each string from ``foo`` to the browser document
+    3. ```p.js```: a script that ```require('./foo');``` and append ```<p>``` for each string from ``foo`` to the browser document
 2. Running ```gulp``` will ```browserify``` files with ```./src/*.js``` glob pattern.
     * It will create a separate bundle for each file in the ```src``` folder and write it to the ```dist``` folder.
 3. ```index.html``` loads the bundled ```p.js``` script
@@ -64,7 +64,7 @@ returned by ```b.bundle();```, so that we can use it down the pipeline as a viny
 ## Notes
 
 
-### 61 reasons not to use ```gulp-browserify``` (or most gulp-* wrappers) and counting
+### 61 reasons not to use ```gulp-browserify``` and counting
 
 The main ```browserify``` library has enough [open issues](https://github.com/substack/node-browserify/issues) at the moment (61 open issues as of 14 Aug 2014)
 that it makes hard to guarantee that ```gulp-browserify``` will always be up-to-date.
@@ -155,7 +155,9 @@ So, if we want to pipe a regular Stream, for example, from [browserify.bundle()]
 And that's exactly what ```vinyl-transform``` is for; it wraps around a regular Stream and gives you a ```vinyl``` file object
 that you can push into a gulp pipe. Easy-peezy, lemon-squeezy, Dean.
 
-You can apply the same principles to other existing npm modules that supports regular Stream.
+You can apply the same principles to other existing npm modules that supports regular Stream to make them compatible with gulp.
+
+
  
 
 
