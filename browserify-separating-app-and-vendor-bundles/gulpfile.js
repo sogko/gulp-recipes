@@ -6,6 +6,7 @@ var gulp = require('gulp');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var bowerResolve = require('bower-resolve');
+var nodeResolve = require('resolve');
 
 var production = (process.env.NODE_ENV === 'production');
 
@@ -39,6 +40,12 @@ gulp.task('build-vendor', function () {
     });
   });
 
+  // do the similar thing, but for npm-managed modules.
+  // resolve path using 'resolve' module
+  getNPMPackageIds().forEach(function (id) {
+    b.require(nodeResolve.sync(id), { expose: id });
+  });
+
   var stream = b.bundle().pipe(source('vendor.js'));
 
   // pipe additional tasks here (for eg: minifying / uglifying, etc)
@@ -61,6 +68,13 @@ gulp.task('build-app', function () {
   // instead, we will load vendor libraries from vendor.js bundle
   getBowerPackageIds().forEach(function (lib) {
     b.external(lib);
+  });
+
+
+  // do the similar thing, but for npm-managed modules.
+  // resolve path using 'resolve' module
+  getNPMPackageIds().forEach(function (id) {
+    b.external(id);
   });
 
   var stream = b.bundle().pipe(source('app.js'));
@@ -87,5 +101,18 @@ function getBowerPackageIds() {
     // does not have a bower.json manifest
   }
   return _.keys(bowerManifest.dependencies) || [];
+
+}
+
+
+function getNPMPackageIds() {
+  // read package.json and get dependencies' package ids
+  var packageManifest = {};
+  try {
+    packageManifest = require('./package.json');
+  } catch (e) {
+    // does not have a package.json manifest
+  }
+  return _.keys(packageManifest.dependencies) || [];
 
 }

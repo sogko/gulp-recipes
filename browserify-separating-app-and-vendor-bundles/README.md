@@ -37,8 +37,10 @@ This recipe depends on a number of modules to wire this all up together:
 
 * [```browserify```](https://github.com/substack/node-browserify): yes, the original library
 * [```vinyl-source-stream```](https://github.com/hughsk/vinyl-source-stream): to allow the use of the vanilla browserify (see: [browserify-vanilla](../browserify-vanilla) example)
-* [```bower-resolve```](https://github.com/eugeneware/bower-resolve): to resolve bower package ids to its full path (for eg: from ```'angular'``` to ```'/public/src/vendor/angular/angular.js'```) which we need to bundle into ```vendor.js```
+* [```bower-resolve```](https://github.com/eugeneware/bower-resolve): to resolve bower package ids to its full path (for eg: from ```'angular'``` to ```'public/src/vendor/angular/angular.js'```) which we need to bundle into ```vendor.js```
+* [```resolve```](https://github.com/substack/node-resolve): to resolve npm-managed modulesids to its full path (for eg: from ```'lodash'``` to ```'node_modules/lodash/lodash.js'```) which we need to bundle into ```vendor.js```
 * [```lodash```](http://github.com/lodash/lodash): just so we can bundle an npm module
+* ```angular``` and ```angular-ui-router```: just so we can bundle bower-managed modules
 * ```fs```: to read ```bower.json```
 
 
@@ -50,7 +52,6 @@ Let's say we have the following Angular web application, with complex dependenci
 on a number of libraries managed using Bower (angular, angular-resource, angular-ui-router etc).
 
 ```
-
 public/
     '- src/
     '   '- app/
@@ -58,6 +59,8 @@ public/
     '   '- vendor/
     '       '- ...      // bower-managed libraries goes here
     '- index.html       // our angular app root page
+node_modules/           // npm-managed libraries here
+    '- ...      
 ```
 
 
@@ -87,7 +90,7 @@ In this case, we can start off by separating our client-side codebase into appli
 * are maintained separately by its vendor.
 * no reason to be changed frequently once added as a dependency, except to update it to a later version, at which point we can re-build on-demand.
 * is a common library used by possibly multiple applications.
-* eg: jQuery, Angular, reactjs etc
+* eg: lodash, jQuery, Angular, reactjs etc
 
 With the above strategy, within a project's lifetime, we'd be changing and re-building the application code much, much
 more frequently than we'd need to rebuild the vendor code.
