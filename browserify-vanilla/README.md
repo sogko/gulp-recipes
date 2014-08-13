@@ -1,4 +1,4 @@
-# ```browserify vanilla flavored
+# browserify, vanilla flavored
 
 This recipe shows you how to use vanilla [```browserify```](https://github.com/substack/node-browserify) (with some help from [```vinyl-transform```](https://github.com/hughsk/vinyl-transform)) and move away from using [```gulp-browserify```](https://github.com/deepak1556/gulp-browserify).
 
