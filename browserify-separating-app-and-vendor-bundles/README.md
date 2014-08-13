@@ -108,11 +108,11 @@ It's basically the same principles, except taken towards the extreme end. This w
 ## Why not use ```watchify```?
 (Feel free to correct me if I'm wrong or if there is a better way to look at this)
 
-I haven't been using [```watchify```](https://github.com/substack/watchify) as much since it seems to be more suited for optimization use-cases where you want to small incremental builds when creating a single bundle.
+I haven't been using [```watchify```](https://github.com/substack/watchify) as much since it seems to be more suited for optimization use-cases where you want to have small incremental builds for a single huge bundle that takes a considerable amount of time to build each time.
 
 We can still use ```watchify``` for the other two strategies (multiple bundles) where we have one ```watchify``` task for each bundle we want to create. 
 
-This more suited for use-cases when even after separating our codebase into bundles, we still want to continue reducing our build times further.
+This is probably more suited for use-cases when even after separating our codebase into bundles, we still want to continue reducing our build times further.
 
 For example, if we were to update our recipe and use ```watchify```:
 * one ```watchify``` task for building ```vendor.js``` where it watches changes in ```bower.json``` or the ```public/src/vendor/**/*.js```
