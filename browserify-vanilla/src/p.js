@@ -7,7 +7,6 @@ var foo = require('./foo.js');
 var _ = require('lodash');
 
 _.forEach(foo(), function (f) {
-
   // create a <p> tag for each f and add to html body
   var p = document.createElement('p');
   p.innerHTML = f;

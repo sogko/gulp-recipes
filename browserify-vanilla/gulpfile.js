@@ -7,21 +7,20 @@ var uglify = require('gulp-uglify');
 
 gulp.task('browserify', function () {
 
-  // use `vinyl-transform` to wrap the regular ReadableStream returned by `b.bundle();` with vinyl-fs file object
-  // so that we can use it down a vinyl pipeline
+  // use `vinyl-transform` to wrap around the regular ReadableStream returned by b.bundle();
+  // so that we can use it down a vinyl pipeline as a vinyl file object.
+  // `vinyl-transform` takes care of creating both streaming and buffered vinyl file objects.
   var browserified = transform(function(filename) {
     var b = browserify(filename);
     return b.bundle();
   });
 
-  return gulp.src('./src/main.js')  // or you can try './src/*.js' to browserify every file in ./src/* as a separate bundle,
-    .pipe(browserified)             // it'd still work!
-
-    // add more transformation tasks to the pipeline here if needed,
-    // for eg: minify, uglify, transform etc.
+  return gulp.src(['./src/*.js'])
+    .pipe(browserified)
     .pipe(uglify())
-
     .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('default', ['browserify']);
+
+
