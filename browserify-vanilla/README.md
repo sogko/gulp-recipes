@@ -15,7 +15,7 @@ and move away from using [```gulp-browserify```](https://github.com/deepak1556/g
 1. The example [```src/main.js```](src/main.js) script requires two modules:
     1. A relative file that has an exported module
     2. A plain npm-managed node module ([```lodash```](https://github.com/lodash/lodash))
-2. The default ```gulp``` task will bundle ```src/main.js``` into ```dist/bundle.js```, which is loaded into [```index.html```](index.html)
+2. The default ```gulp``` task will bundle ```src/main.js``` into ```dist/main.js```, which is loaded into [```index.html```](index.html)
 
 ## Notes
 
