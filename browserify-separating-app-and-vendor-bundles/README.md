@@ -75,7 +75,9 @@ Every second it takes to build the bundle affects your sanity as a developer.
 
 #### A better strategy
 
-A different strategy would be to separate our client-side codebase into application code and vendor code.
+A different strategy would be to decompose our codebase into smaller modular pieces.
+
+In this case, we can start off by separating our client-side codebase into application code and vendor code.
 
 **Application code:**
 * has frequent changes which requires a re-build for every change.
@@ -94,7 +96,6 @@ Our build time would be reduced since the application codebase is typically smal
 
 We get to keep our sanity within healthy levels.
 
-
 #### An even more extreme strategy
 
 But what happens when the application codebase gets larger, and even just building the application code is taking a second too long?
@@ -108,14 +109,15 @@ It's basically the same principles, except taken towards the extreme end. This w
 ## Why not use ```watchify```?
 (Feel free to correct me if I'm wrong or if there is a better way to look at this)
 
-I haven't been using [```watchify```](https://github.com/substack/watchify) as much since it seems to be more suited for optimization use-cases where you want to have small incremental builds for a single huge bundle that takes a considerable amount of time to build each time.
+I haven't been using [```watchify```](https://github.com/substack/watchify) as much since it seems to be more suited for optimization use-cases where you have single huge bundle that you can't decompose into separate modules anymore. 
+
+And you still want to have small incremental builds instead of building the entire bundle that takes a considerable amount of time to build each time.
 
 We can still use ```watchify``` for the other two strategies (multiple bundles) where we have one ```watchify``` task for each bundle we want to create. 
-
-This is probably more suited for use-cases when even after separating our codebase into bundles, we still want to continue reducing our build times further.
 
 For example, if we were to update our recipe and use ```watchify```:
 * one ```watchify``` task for building ```vendor.js``` where it watches changes in ```bower.json``` or the ```public/src/vendor/**/*.js```
 * one ```watchify``` task for building ```app.js``` where it watches changes in ```public/src/app/app.js```
 
 The result of this is that we can have an even smaller build times since watchify helps us to only build the changes that are needed.
+
