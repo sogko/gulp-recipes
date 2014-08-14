@@ -14,7 +14,7 @@ gulp.task('browserify', function () {
   return gulp.src(['./src/*.js'])
     .pipe(browserify())
     .pipe(uglify())
-    .pipe(gulp.dest('./dist-g'));
+    .pipe(gulp.dest('./dist'));
 });
 ```
 
