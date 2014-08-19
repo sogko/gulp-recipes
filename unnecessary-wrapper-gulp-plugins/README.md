@@ -1,14 +1,21 @@
 # Unnecessary wrapper gulp-* plugins
 
-We will do something different here and have a recipe for each gulp-*  plugin that simply wraps around an existing NodeJS library.
+We will do something different here and have a recipe for each ```gulp-*```  plugin that simply wraps around an existing NodeJS library.
 
-While there are gulp-* plugins that are well-written and actually add something of value to the gulp ecosystem, there are some that can simply be replaced with a gulp recipe, with the help of some utility libraries to glue them together.
+There are ```gulp-*`` plugins that are 
+* well-written
+* well-maintained
+* fills up a void in the gulp ecosystem
+* actually add something of value
+
+Meanwhile, there are some that can simply be replaced with a gulp recipe, with the help of some utility libraries to glue them together.
 
 Unfortunately, these plugins come with additional overhead: an extra GitHub repository, npm module, maintainer, tests, semantics, etc.
 It's much simpler in this case to use the original module directly where you can, which is what vinyl-source-stream handles for you.
 
 ## Why should we embrace existing NodeJS libraries?
-TODO:
+
+(wip)
 
 Sometimes this boil downs to a matter perspective, personal preference and what you are willing (or unwilling) to sacrifice
 
@@ -17,9 +24,11 @@ For reasons why existing NodeJS libraries should be embraced over thin wrapper p
 * [Why you shouldn’t create a gulp plugin (or, how to stop worrying and learn to love existing node packages)](http://blog.overzealous.com/post/74121048393/why-you-shouldnt-create-a-gulp-plugin-or-how-to-stop)
 * [gulp + browserify, the gulp-y way](http://medium.com/@sogko/gulp-browserify-the-gulp-y-way-bb359b3f9623)
 
-Of course, this is just one opinion about the subject.
+Of course, this is just an opinion on the subject.
 
-## TODO: error handling
+## Error handling
+
+(wip)
 
 ## List of useful utility libraries (gulp glues)
 
