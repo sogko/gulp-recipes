@@ -42,11 +42,13 @@ Sometimes, what you need is just a little utility or two to cook up your perfect
 
 ## List of gulp-y recipes for each wrapper plugins 
 
-| Wrapper plugin      | Original library        | Gulp recipe       | Glue(s)     |
-| :------------------ | :---------------------- | :---------------- | :---------- |
-| [gulp-browserify](https://github.com/deepak1556/gulp-browserify) | [browserify](https://github.com/substack/node-browserify) | [browserify.js](browserify.js) | [vinyl-transform](https://github.com/hughsk/vinyl-transform)
-| [gulp-minify-css](https://github.com/jonathanepollack/gulp-minify-css) | [clean-css](https://github.com/GoalSmashers/clean-css) | [clean-css.js](clean-css.js) | [vinyl-map](https://github.com/hughsk/vinyl-map)
-| [gulp-clean-css](https://github.com/radmen/gulp-clean-css) | [clean-css](https://github.com/GoalSmashers/clean-css) | [clean-css.js](clean-css.js) | [vinyl-map](https://github.com/hughsk/vinyl-map)
-| [gulp-cleancss](https://github.com/mgcrea/gulp-cleancss) | [clean-css](https://github.com/GoalSmashers/clean-css) | [clean-css.js](clean-css.js) | [vinyl-map](https://github.com/hughsk/vinyl-map)
-| [gulp-cssmin](https://github.com/chilijung/gulp-cssmin) | [clean-css](https://github.com/GoalSmashers/clean-css) | [clean-css.js](clean-css.js) | [vinyl-map](https://github.com/hughsk/vinyl-map)
-| [gulp-uglify](https://github.com/terinjokes/gulp-uglify) | [uglify-js](https://github.com/mishoo/UglifyJS2) | [uglify-js.js](uglify-js.js) | [vinyl-map](https://github.com/hughsk/vinyl-map) & [gulp-concat](https://github.com/wearefractal/gulp-concat)
+| Wrapper plugin      | Original library        | Gulp recipe       | Glue(s)     | Note(s)     |
+| :------------------ | :---------------------- | :---------------- | :---------- | :------------ |
+| [gulp-browserify](https://github.com/deepak1556/gulp-browserify) | [browserify](https://github.com/substack/node-browserify) | [browserify.js](browserify.js) | [vinyl-transform](https://github.com/hughsk/vinyl-transform)| \- |
+| [gulp-minify-css](https://github.com/jonathanepollack/gulp-minify-css) | [clean-css](https://github.com/GoalSmashers/clean-css) | [clean-css.js](clean-css.js) | [vinyl-map](https://github.com/hughsk/vinyl-map)| \- |
+| [gulp-clean-css](https://github.com/radmen/gulp-clean-css) | [clean-css](https://github.com/GoalSmashers/clean-css) | [clean-css.js](clean-css.js) | [vinyl-map](https://github.com/hughsk/vinyl-map)| \- |
+| [gulp-cleancss](https://github.com/mgcrea/gulp-cleancss) | [clean-css](https://github.com/GoalSmashers/clean-css) | [clean-css.js](clean-css.js) | [vinyl-map](https://github.com/hughsk/vinyl-map)| \- |
+| [gulp-cssmin](https://github.com/chilijung/gulp-cssmin) | [clean-css](https://github.com/GoalSmashers/clean-css) | [clean-css.js](clean-css.js) | [vinyl-map](https://github.com/hughsk/vinyl-map)| \- |
+| [gulp-uglify](https://github.com/terinjokes/gulp-uglify) | [uglify-js](https://github.com/mishoo/UglifyJS2) | [uglify-js.js](uglify-js.js) | [vinyl-map](https://github.com/hughsk/vinyl-map) & [gulp-concat](https://github.com/wearefractal/gulp-concat)| \- |
+| [gulp-rimraf](https://github.com/robrich/gulp-rimraf) | [rimraf](https://github.com/isaacs/rimraf) | [del.js](del.js) | *none* | ```rimraf``` does not support glob patterns; use ```del``` instead. <br/> Credits: [delete-files-folder](https://github.com/gulpjs/gulp/blob/master/docs/recipes/delete-files-folder.md) |
+| [gulp-clean](https://github.com/peter-vilja/gulp-clean) | [rimraf](https://github.com/isaacs/rimraf) | [del.js](del.js) | *none* | ```rimraf``` does not support glob patterns; use [```del```](https://github.com/sindresorhus/del) instead. <br/> Credits: [delete-files-folder](https://github.com/gulpjs/gulp/blob/master/docs/recipes/delete-files-folder.md)<br/> |
