@@ -18,7 +18,7 @@ gulp.task('browserify', function () {
 });
 ```
 
-And here's the recipe replacing ```gulp-browserify``` with ```browswerify``` + ```vinyl-transform```
+And here's the recipe replacing ```gulp-browserify``` with ```browserify``` + ```vinyl-transform```
 
 ```javascript
 var gulp = require('gulp');

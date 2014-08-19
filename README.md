@@ -34,6 +34,9 @@ Simply ```cd``` to a recipe folder, ```gulp``` and slurp away.
 * [```browserify-separating-app-and-vendor-bundles```](browserify-separating-app-and-vendor-bundles)
 <br/>How to use vanilla ```browserify``` (and its friends) to separate codebase into multiple bundles for better build times.
 
+* [```unnecessary-wrapper-gulp-plugins```](unnecessary-wrapper-gulp-plugins)
+<br/>A list of gulp-y recipes for unnecessary wrapper gulp-* plugins 
+
 ## Quick Start
 
 **Pre-requisites**
