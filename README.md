@@ -1,7 +1,7 @@
 # gulp-recipes
 
 <p align="center">
-  <img src='https://raw2.github.com/gulpjs/artwork/master/gulp.png'/>
+    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
 </p>
 
 Not your typical collection of [gulp](http://gulpjs.com) recipes for your streaming build.
