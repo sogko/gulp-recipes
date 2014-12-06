@@ -4,7 +4,7 @@ A gulp recipe using vanilla [```browser-sync```](https://github.com/shakyShane/b
 
 With the combination of these two, we can achieve the following use-cases:
 * Inject changes into loaded page, when CSS or images are modified, without reloading the whole page.
-* Reload page when affected files are modified (HTML, partials, client-side code).
+* Reload page when affected files are modified (HTML, partials, client-side JavaScript code).
 * Restart server when core server files are modified.
 
 ## Running the example
@@ -19,13 +19,14 @@ Run ```gulp``` to start
 2. To see ```browser-sync``` + ```nodemon``` working together:
     * Edit ```public/style.css``` to see ```browser-sync``` injecting changed css into page without reloading page
     * Edit ```public/index.html``` to see ```browser-sync``` reloading browser upon change
+    * Edit ```public/main.js``` to see ```browser-sync``` reloading browser upon change
     * Edit ```app.js``` to see ```nodemon``` restarting server and ```browser-sync``` reloading page upon page
 
 ## Notes
 
 ### [BS] [ERROR] Proxy address not reachable. Is your server running?
 
-Running ```gulp``` will show the following output
+Running an older version of ```gulp``` may show the following output
 
 ```
 [03:06:27] Using gulpfile ~/sogko/gulp-recipes/expressjs-browser-sync-nodemon/gulpfile.js
