@@ -2,7 +2,7 @@
 
 A fairly simple-to-intermediate recipe of using [```browserify```](https://github.com/substack/node-browserify) to create separate bundles for you client-side app code and vendor libraries.
 
-The goal is to organize our application build that helps with reducing build time. Continuous integration and all that jazz too.
+The goal is to organize our application build that helps with reducing build time. Continuous integration, app loading time, and all that jazz too.
 
 ## Running the example
 
@@ -123,4 +123,19 @@ For example, if we were to update our recipe and use ```watchify```:
 * one ```watchify``` task for building ```app.js``` where it watches changes in ```public/src/app/app.js```
 
 The result of this is that we can have an even smaller build times since watchify helps us to only build the changes that are needed.
+
+
+### Reducing app loading time
+
+* Single bundle `app.js`: 
+
+Everytime you redeploy your app in production, the `app.js` file has normally changed. Thus all clients must redownload that whole big file.
+
+* Two bundle `vendor.js` and `app.js`: 
+
+Everytime you redeploy your app in production, the `vendor.js` file has may not changed (unless you updated your app dependencies). Browser caching can kicks in thanks to ETags.`app.js` will however always be reloaded.
+
+
+If you want better app loading times after a new production deployment of your app, and optimise the browser caching abilities, use this bundle splitting strategy. It can have an impact on user experience if your app is big and you redeploy it often.
+
 
