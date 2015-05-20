@@ -49,7 +49,7 @@ gulp.task('browser-sync', ['nodemon'], function () {
     port: 4000,
 
     // open the proxied app in chrome
-    browser: ['google chrome']
+    browser: ['google-chrome']
   });
 });
 
