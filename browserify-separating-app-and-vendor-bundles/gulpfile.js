@@ -46,7 +46,15 @@ gulp.task('build-vendor', function () {
     b.require(nodeResolve.sync(id), { expose: id });
   });
 
-  var stream = b.bundle().pipe(source('vendor.js'));
+  var stream = b
+    .bundle()
+    .on('error', function(err){
+      // print the error (can replace with gulp-util)
+      console.log(err.message);
+      // end this stream
+      this.emit('end');
+    })
+    .pipe(source('vendor.js'));
 
   // pipe additional tasks here (for eg: minifying / uglifying, etc)
   // remember to turn off name-mangling if needed when uglifying
