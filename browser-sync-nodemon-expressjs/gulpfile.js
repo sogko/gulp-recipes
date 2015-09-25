@@ -27,7 +27,7 @@ gulp.task('nodemon', function (cb) {
       // reload connected browsers after a slight delay
       setTimeout(function reload() {
         browserSync.reload({
-          stream: false   //
+          stream: false
         });
       }, BROWSER_SYNC_RELOAD_DELAY);
     });
@@ -36,10 +36,7 @@ gulp.task('nodemon', function (cb) {
 gulp.task('browser-sync', ['nodemon'], function () {
 
   // for more browser-sync config options: http://www.browsersync.io/docs/options/
-  browserSync.init({
-
-    // watch the following files; changes will be injected (css & images) or cause browser to refresh
-    files: ['public/**/*.*'],
+  browserSync({
 
     // informs browser-sync to proxy our expressjs app which would run at the following location
     proxy: 'http://localhost:3000',
@@ -53,7 +50,24 @@ gulp.task('browser-sync', ['nodemon'], function () {
   });
 });
 
+gulp.task('js',  function () {
+  return gulp.src('public/**/*.js')
+    // do stuff to JavaScript files
+    //.pipe(uglify())
+    //.pipe(gulp.dest('...'));
+});
 
-gulp.task('default', ['browser-sync']);
+gulp.task('css', function () {
+  return gulp.src('public/**/*.css')
+    .pipe(browserSync.reload({ stream: true }));
+})
 
+gulp.task('bs-reload', function () {
+  browserSync.reload();
+});
 
+gulp.task('default', ['browser-sync'], function () {
+  gulp.watch('public/**/*.js',   ['js', browserSync.reload]);
+  gulp.watch('public/**/*.css',  ['css']);
+  gulp.watch('public/**/*.html', ['bs-reload']);
+});
