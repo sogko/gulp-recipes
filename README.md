@@ -1,5 +1,13 @@
 # gulp-recipes
 
+## Notes:
+__Updates as of 20 March 2016__: I have originally created this so that the Gulp community would be able help each other to find solutions to common use-cases. I have since moved away from Gulp to Webpack for most of my work, and have not been actively participating in Gulp's latest activities _(I'm not knocking on Gulp, it is still a useful tool. Webpack just works well for my case)._
+
+Some (most? or all?) of the recipes in this repo has not been updated for a while, and may not work as expected.
+But I do hope that those in the Gulp community still help each other grow, and I'd be very happy to accept PRs for any existing or new recipes. Or even a new maintainer =)
+
+---
+
 <p align="center">
     <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
 </p>
