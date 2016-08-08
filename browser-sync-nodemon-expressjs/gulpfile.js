@@ -67,7 +67,7 @@ gulp.task('bs-reload', function () {
 });
 
 gulp.task('default', ['browser-sync'], function () {
-  gulp.watch('public/**/*.js',   ['js', browserSync.reload]);
+  gulp.watch('public/**/*.js',   ['js', 'bs-reload']);
   gulp.watch('public/**/*.css',  ['css']);
   gulp.watch('public/**/*.html', ['bs-reload']);
 });
