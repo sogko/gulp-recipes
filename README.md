@@ -1,9 +1,9 @@
 # gulp-recipes
 
 ## Notes:
-__Updates as of 20 March 2016__: I have originally created this so that the Gulp community would be able help each other to find solutions to common use-cases. I have since moved away from Gulp to Webpack for most of my work, and have not been actively participating in Gulp's latest activities _(I'm not knocking on Gulp, it is still a useful tool. Webpack just works well for my case)._
+__Updates as of 20 March 2016__: I had originally created this so that those in the Gulp community would be able help each other find solutions to common use cases. I have since moved away from Gulp to Webpack for most of my work, and have not been actively participating in Gulp's latest activities _(I'm not knocking on Gulp; it is still a useful tool. Webpack just works well for my case)._
 
-Some (most? or all?) of the recipes in this repo has not been updated for a while, and may not work as expected.
+Some (most? or all?) of the recipes in this repo have not been updated for a while, and may not work as expected.
 But I do hope that those in the Gulp community still help each other grow, and I'd be very happy to accept PRs for any existing or new recipes. Or even a new maintainer =)
 
 ---
@@ -14,21 +14,21 @@ But I do hope that those in the Gulp community still help each other grow, and I
 
 Not your typical collection of [gulp](http://gulpjs.com) recipes for your streaming build.
 
-Rather than having a big 'ol ```gulpfile.js``` with a ton of ```gulp.task()```,
-* each recipe is a standalone folder,
-* with its own ```gulpfile.js``` and minimal set of ```gulp.task()```,
-* healthy pinch of comments,
-* comes along with real examples that you can ```gulp``` to see it in action,
-* a big serving of ```README.md``` included!
+Rather than having a big ol' ```gulpfile.js``` with a ton of ```gulp.task()```s each recipe:
+* is a standalone folder
+* has its own ```gulpfile.js``` and minimal set of ```gulp.task()```s
+* has a healthy pinch of comments
+* comes along with real examples that you can ```gulp``` to see it in action
+* has a big serving of ```README.md``` included!
 
 Simply ```cd``` to a recipe folder, ```gulp``` and slurp away.
 
 ## Motivations
 
-* Enough with the plugins wrapping over an existing library, created just for convenient's sake.
+* Enough with the plugins wrapping over an existing library, created just for convenience's sake.
 * Vanilla node modules over wrappers.
-* If an existing library can be vinyled, tapped, plumbered, transformed from/to buffers and/or streams, let there be a recipe for it.
-* A lot of recipe snippets laying around the web; most are working off the bat. Some needs a little bit more pizzazz. And pizzas.
+* If an existing library can be `vinyl`ed, `tap`ped, `plumber`ed, transformed from/to buffers and/or streams, let there be a recipe for it.
+* A lot of recipe snippets laying around the web; most are working off the bat. Some need a little bit more pizzazz. And pizzas.
 
 
 ## Recipes
@@ -43,11 +43,11 @@ Simply ```cd``` to a recipe folder, ```gulp``` and slurp away.
 <br/>How to use vanilla ```browserify``` (and its friends) to separate codebase into multiple bundles for better build times.
 
 * [```unnecessary-wrapper-gulp-plugins```](unnecessary-wrapper-gulp-plugins)
-<br/>A list of gulp-y recipes for unnecessary wrapper gulp-* plugins 
+<br/>A list of gulp-y recipes for unnecessary wrapper `gulp-*` plugins 
 
 ## Quick Start
 
-**Pre-requisites**
+**Prerequisites**
 
 ```bash
 npm install -g gulp
